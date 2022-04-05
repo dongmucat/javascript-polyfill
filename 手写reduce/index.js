@@ -6,7 +6,7 @@ Array.prototype.myReduce = function (callback, initValue) {
     if (Object.prototype.toString.call(callback) !== '[object Function]') {
         throw new TypeError('callback not a function');
     }
-    const arr = this;
+    const arr = Object(this);
     let acc;//累加器
     let initIndex;//初始值的索引
     //如果没有初始值，则acc初始值为数组的第一个元素，initIndex从一开始
