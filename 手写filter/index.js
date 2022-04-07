@@ -11,7 +11,7 @@ Array.prototype.myFilter = function (callback, thisArg) {
     const arr = Object(this);
     // >>>0 保证len为number类型，且为正整数
     const len = arr.length || 0;
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < len; i++) {
         if (callback.call(thisArg,arr[i],i,this)) {
             res.push(arr[i]);
         }
