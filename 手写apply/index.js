@@ -1,16 +1,17 @@
 Function.prototype.myApply = function (target) {
     if (typeof this !== "function") {
-        throw new TypeError("not a function");
+        throw new Error("not a function");
     }
     if (!Array.isArray(arguments[1])) {
         throw new Error('arg not a array');
     }
+    // 当target为空的时候给值为window
     target = target || window;
     target.fn = this;
     /* 取得数组 */
-    let args = arguments[1];
+    const args = arguments[1];
     /* 执行fn */
-    let result = target.fn(args);
+    const result = target.fn(args);
     /* 删除fn */
     delete target.fn;
     return result;
