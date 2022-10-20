@@ -12,7 +12,7 @@ Array.prototype.myMap = function (callback, thisArg) {
     const len = arr.length || 0;
     for (let i = 0; i < len; i++) {
         // 调用回调函数并传入新数组
-        res[i] = callback.call(thisArg, arr[i], i, this);
+        res[i] = callback.call(thisArg, arr[i], i, arr);
     }
     return res;
 }
