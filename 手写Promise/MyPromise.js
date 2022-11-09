@@ -28,7 +28,7 @@ class MyPromise {
 		// change
 		this.PromiseResult = value;
 		this.PromiseState = FULFILLED;
-		// 执行失败的回调函数
+		 // 执行成功的回调函数
 		while (this.onFulfilledCallbacks.length) {
 			const cb = this.onFulfilledCallbacks.shift();
 			cb(this.PromiseResult);
@@ -50,7 +50,7 @@ class MyPromise {
 		// change
 		this.PromiseResult = reason;
 		this.PromiseState = REJECTED;
-		// 执行成功的回调函数
+		// 执行失败的回调函数
 		while (this.onRejectedCallbacks.length) {
 			const cb = this.onRejectedCallbacks.shift();
 			cb(this.PromiseResult);
